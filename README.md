@@ -1,1 +1,1 @@
-# virsh-magic-shop
+# virsh-card-shop
