@@ -1,0 +1,41 @@
+.shop-nav {
+    display: flex;
+    justify-content: center;
+}
+
+ul {
+    display: flex;
+    width: 60dvw;
+    justify-content: center;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+}
+
+.nav-link > span.label {
+    position: relative;
+    align-self: center;
+    color: rgba(255, 255, 255, .25);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-left: 1em;
+    width: 60%;
+}
+
+.nav-link > span.label::before {
+    content: attr(data-text);
+    position: absolute;
+    color: white;
+    width: 0;
+    overflow: hidden;
+    transition: .4s;
+    -webkit-text-stroke: 2px var(--clr);
+    border-right: .75em solid var(--clr);
+}
+
+.nav-link:hover > span.label::before {
+    width: 100%;
+    filter: drop-shadow(0 0 25px var(--clr));
+}

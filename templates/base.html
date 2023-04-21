@@ -9,30 +9,69 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <link rel="stylesheet" href="../static/css/normalize.css">
 <link rel="stylesheet" href="../static/css/main.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka">
 <title>Virsh's Card Shop</title>
 <link rel="icon" type="image/x-icon" href="../static/images/favicon.ico">
 </head>
-<body style="background-color: #222;">
+<body style="background-color: #222; font-family: 'Fredoka One', sans-serif;">
     <nav class="shop-nav">
-        <div>
-            <img src="../static/images/favicon.ico" alt="Logo">
-        </div>
-        <div>
+        <div class="row">
             <ul>
-                <li>
-                    <a href="#">
+                <li style="--clr:rgb(249, 250, 244)">
+                    <a class="nav-link" href="#">
                         <lord-icon
-                            src="https://cdn.lordicon.com/hjbsbdhw.json"
+                            src="https://cdn.lordicon.com/kxoxiwrf.json"
                             trigger="hover"
-                            style="width:250px;height:250px">
+                            colors="primary:#3080e8,secondary:#16c72e"
+                            style="width: 100px; height: 100px">
                         </lord-icon>
-                        Home
+                        <span class="label" data-text="Home">Home</span>
                     </a>
                 </li>
-                <li><a href="#">About Me</a></li>
-                <li><a href="#">Contact Me</a></li>
-                <li><a href="#">Login</a></li>
-                <li><a href="#">Logout</a></li>
+                <li style="--clr:rgb(14, 104, 171)">
+                    <a class="nav-link" href="#">
+                        <lord-icon
+                            src="https://cdn.lordicon.com/haydeari.json"
+                            trigger="hover"
+                            colors="primary:#3080e8,secondary:#16c72e"
+                            style="width:100px;height:100px">
+                        </lord-icon>
+                        <span class="label" data-text="About">About</span>
+                    </a>
+                </li>
+                <li style="--clr:rgb(166, 159, 157)">
+                    <a class="nav-link" href="#">
+                        <lord-icon
+                            src="https://cdn.lordicon.com/tknpvmuo.json"
+                            trigger="hover"
+                            colors="primary:#3080e8,secondary:#16c72e"
+                            style="width:100px;height:100px">
+                        </lord-icon>
+                        <span class="label" data-text="Contact">Contact</span>
+                    </a>
+                </li>
+                <li style="--clr:rgb(211, 32, 42)">
+                    <a class="nav-link" href="#">
+                        <lord-icon
+                            src="https://cdn.lordicon.com/hcuxerst.json"
+                            trigger="hover"
+                            colors="primary:#3080e8,secondary:#16c72e"
+                            style="width:100px;height:100px">
+                        </lord-icon>
+                        <span class="label" data-text="Logout">Logout</span>
+                    </a>
+                </li>
+                <li style="--clr:rgb(0, 115, 62)">
+                    <a class="nav-link" href="#">
+                        <lord-icon
+                            src="https://cdn.lordicon.com/qbxwelhw.json"
+                            trigger="hover"
+                            colors="primary:#3080e8,secondary:#16c72e"
+                            style="width:100px;height:100px">
+                        </lord-icon>
+                        <span class="label" data-text="Login">Login</span>
+                    </a>
+                </li>
             </ul>
         </div>
     </nav>
