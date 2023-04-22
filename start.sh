@@ -1,0 +1,1 @@
+gunicorn "virsh-card-shop:app"
