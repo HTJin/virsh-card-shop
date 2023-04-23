@@ -2,6 +2,7 @@
     display: flex;
     justify-content: center;
     font-family: 'Octarine', sans-serif;
+    font-weight: bold;
     height: 80vh;
 }
 
@@ -12,6 +13,7 @@
     letter-spacing: .2em;
     position: relative;
     cursor: pointer;
+    user-select: none;
 }
 
 .landing::before,
@@ -24,7 +26,9 @@
     top: 0;
     width: 1em;
     opacity: 0;
-    animation: fade-in 1s 7s ease-in forwards, bracket 1s 7s linear forwards;
+    animation:
+        fade-in 1s 7s ease-in forwards,
+        bracket 1s 7s linear forwards;
 }
 
 .landing::before {
@@ -39,10 +43,11 @@
 
 .landing:hover::before,
 .landing:hover::after {
+    border-color: orange;
     animation: 
         fade-in 1s 7s ease-in forwards, 
         bracket 1s 7s linear forwards,
-        rubberBand 2s ease;
+        rubberBand 1s ease forwards;
 }
 
 .line {
@@ -131,4 +136,14 @@
     100% {
         width: 8.5ch;
     }
+}
+
+.hover-letter {
+    display: inline-block;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.hover-letter:hover {
+    color: orange;
+    transform: translateY(-0.2em);
 }
