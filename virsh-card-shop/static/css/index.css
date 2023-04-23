@@ -1,0 +1,134 @@
+.container {
+    display: flex;
+    justify-content: center;
+    font-family: 'Octarine', sans-serif;
+    height: 80vh;
+}
+
+.landing {
+    color: rgb(249, 250, 244);
+    font-size: 4em;
+    align-self: center;
+    letter-spacing: .2em;
+    position: relative;
+    cursor: pointer;
+}
+
+.landing::before,
+.landing::after {
+    border: .5em solid rgb(249, 250, 244);
+    border-radius: 5px;
+    bottom: 0;
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 1em;
+    opacity: 0;
+    animation: fade-in 1s 7s ease-in forwards, bracket 1s 7s linear forwards;
+}
+
+.landing::before {
+    border-left: none;
+    right: 0;
+}
+
+.landing::after {
+    border-right: none;
+    left: 0;
+}
+
+.landing:hover::before,
+.landing:hover::after {
+    animation: 
+        fade-in 1s 7s ease-in forwards, 
+        bracket 1s 7s linear forwards,
+        rubberBand 2s ease;
+}
+
+.line {
+    white-space: nowrap;
+    overflow: hidden;
+    display: block;
+    width: 0;
+    margin-top: .5em;
+    margin-bottom: .5em;
+    margin-left: .7em;
+    margin-right: 0;
+}
+
+.line1 {
+    animation:
+        fade-in .5s ease-in,
+        blink-caret .8s 3 linear,
+        typing1 .5s steps(4, end) 2s forwards,
+        blink-caret .8s 1s 3 linear;
+}
+
+.line2 {
+    animation:
+        blink-caret .8s 3s 5 linear,
+        typing2 1s steps(8, end) 4s forwards;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes bracket {
+    0% {
+        height: 0;
+        opacity: 0;
+        top: 50%;
+    }
+
+    50% {
+        height: 50%;
+        opacity: 0.5;
+    }
+
+    100% {
+        height: 100%;
+        opacity: 1;
+        top: 0;
+    }
+}
+
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-right: .2em transparent;
+        border-radius: 3px;
+    }
+
+    50% {
+        border-right: .2em solid orange;
+        border-radius: 3px;
+    }
+}
+
+@keyframes typing1 {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 4ch;
+    }
+}
+
+@keyframes typing2 {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 8.5ch;
+    }
+}

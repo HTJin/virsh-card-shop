@@ -5,7 +5,6 @@
 
 ul {
     display: flex;
-    width: 60dvw;
     justify-content: center;
 }
 
@@ -21,7 +20,8 @@ ul {
     color: rgba(255, 255, 255, .25);
     text-transform: uppercase;
     letter-spacing: 2px;
-    width: 60%;
+    width: 65%;
+    margin-left: 1em;
 }
 
 .nav-link > span::before {
