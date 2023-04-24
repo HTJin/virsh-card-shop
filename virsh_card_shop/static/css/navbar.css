@@ -1,11 +1,20 @@
 .shop-nav {
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    animation: swing 1s forwards;
+}
+.logo:hover {
+    animation: heartBeat 1s infinite;
 }
 
 ul {
     display: flex;
     justify-content: center;
+    list-style-type: none;
 }
 
 .nav-link {

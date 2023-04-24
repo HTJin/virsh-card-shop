@@ -1,0 +1,87 @@
+.register-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-card {
+    width: 70vw;
+    height: 80vh;
+    justify-content: center;
+    background: linear-gradient(130deg, #FFB864 0%, #006C4C 100%), radial-gradient(100% 224.43% at 0% 0%, #6CFF72 0%, #002C6D 100%), linear-gradient(121.28deg, #FFEAB6 0%, #00563C 100%), radial-gradient(56.26% 101.79% at 50% 0%, #8F00FF 0%, #000000 100%), linear-gradient(65.05deg, #6F0072 0%, #DBFFE5 100%);
+    background-blend-mode: overlay, screen, color-burn, screen, normal;
+    background-size: 200% 200%;
+    animation: gradient 30s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 10% 0%
+    }
+
+    50% {
+        background-position: 91% 100%
+    }
+
+    100% {
+        background-position: 10% 0%
+    }
+}
+
+.backimg {
+    display: flex;
+    justify-content: center;
+    transform: scale(1.5);
+}
+
+.get-centered {
+    display: flex;
+    justify-content: center;
+}
+
+.hover-word {
+    transition: transform .2s ease, color .2s ease;
+    user-select: none;
+    font-weight: 800;
+    color: rgb(249, 250, 244);
+}
+
+.word-space {
+    margin-right: .1em;
+}
+
+.submit-button {
+    display: flex;
+    font-size: 2em;
+    font-weight: 800;
+    border-radius: 50px;
+    padding-left: 1em;
+    padding-right: 1em;
+    color: rgb(249, 250, 244);
+    --c: orange;
+
+    box-shadow: 0 0 0 .1em inset var(--c);
+    --_g: linear-gradient(var(--c) 0 0) no-repeat;
+    background:
+        var(--_g) calc(var(--_p, 0%) - 100%) 0%,
+        var(--_g) calc(200% - var(--_p, 0%)) 0%,
+        var(--_g) calc(var(--_p, 0%) - 100%) 100%,
+        var(--_g) calc(200% - var(--_p, 0%)) 100%;
+    background-size: 50.5% calc(var(--_p, 0%)/2 + .5%);
+    outline-offset: .1em;
+    transition: background-size .4s, background-position 0s .4s;
+}
+
+.submit-button:hover {
+    --_p: 100%;
+    transition: background-position .4s, background-size 0s;
+    transform: rotate(-3deg);
+}
+
+.submit-button:active {
+    box-shadow: 0 0 9e9q inset #0009;
+    background-color: var(--c);
+    color: rgb(249, 250, 244);
+    transform: scale(0.95) rotate(6deg);
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="../static/css/normalize.css">
+<link rel="stylesheet" href="../static/css/navbar.css">
+<link rel="stylesheet" href="../static/css/index.css">
+<link rel="stylesheet" href="../static/css/forms.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka">
+<link rel="stylesheet" href="https://fonts.cdnfonts.com/css/octarine">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+<title>Virsh's Card Shop</title>
+<link rel="icon" type="image/x-icon" href="../static/images/V.svg">
+</head>
+<body style="background-color: #222; font-family: 'Fredoka One', sans-serif;">
+    <nav class="shop-nav navbar">
+        <div class="logo logo-hover navbar-brand"><img src="../static/images/V.svg" alt="Logo" style="width: 50px; height: 50px; margin-bottom: 1em;"></div>
+        <div class="row">
+            <ul>
+                <li class="col" style="--clr: rgb(249, 250, 244);">
+                    <a class="nav-link icon-link" href="{{ url_for('site.home') }}">
+                        <lord-icon
+                            src="https://cdn.lordicon.com/kxoxiwrf.json"
+                            trigger="hover"
+                            colors="primary:#3080e8,secondary:#16c72e"
+                            style="width: 100px; height: 100px;">
+                        </lord-icon>
+                        <span data-text="Home">Home</span>
+                    </a>
+                </li>
+                <li class="col" style="--clr: rgb(14, 104, 171);">
+                    <a class="nav-link icon-link" href="{{ url_for('site.home') }}">
+                        <lord-icon
+                            src="https://cdn.lordicon.com/haydeari.json"
+                            trigger="hover"
+                            colors="primary:#16c72e,secondary:#3080e8"
+                            style="width: 100px; height: 100px;">
+                        </lord-icon>
+                        <span data-text="About">About</span>
+                    </a>
+                </li>
+                <li class="col" style="--clr: rgb(21, 11, 0);">
+                    <a class="nav-link icon-link" href="{{ url_for('site.home') }}">
+                        <lord-icon
+                            src="https://cdn.lordicon.com/tknpvmuo.json"
+                            trigger="hover"
+                            colors="primary:#3080e8,secondary:#16c72e"
+                            style="width: 100px; height: 100px; margin-left: -1em;">
+                        </lord-icon>
+                        <span class="black" data-text="Contact">Contact</span>
+                    </a>
+                </li>
+                {% if current_user.is_authenticated %}
+                    <li class="col" style="--clr: rgb(211, 32, 42);">
+                        <a class="nav-link icon-link" href="{{ url_for('auth.logout') }}">
+                            <lord-icon
+                                src="https://cdn.lordicon.com/hcuxerst.json"
+                                trigger="hover"
+                                colors="primary:#16c72e,secondary:#3080e8"
+                                style="width: 100px; height: 100px;">
+                            </lord-icon>
+                            <span data-text="Logout">Logout</span>
+                        </a>
+                    </li>
+                    {% if current_user.username == 'virsh' %}
+                        <li class="col" style="--clr: rgb(0, 115, 62);">
+                            <a class="nav-link icon-link" href="{{ url_for('site.master_profile') }}">
+                                <lord-icon
+                                    src="https://cdn.lordicon.com/qbxwelhw.json"
+                                    trigger="hover"
+                                    colors="primary:#3080e8,secondary:#16c72e"
+                                    style="width: 100px; height: 100px;">
+                                </lord-icon>
+                                <span data-text="Profile">Profile</span>
+                            </a>
+                        </li>
+                    {% else %}
+                        <li class="col" style="--clr: rgb(0, 115, 62);">
+                            <a class="nav-link icon-link" href="{{ url_for('site.profile') }}">
+                                <lord-icon
+                                    src="https://cdn.lordicon.com/qbxwelhw.json"
+                                    trigger="hover"
+                                    colors="primary:#3080e8,secondary:#16c72e"
+                                    style="width: 100px; height: 100px;">
+                                </lord-icon>
+                                <span data-text="Profile">Profile</span>
+                            </a>
+                        </li>
+                    {% endif %}
+                {% else %}
+                    <li class="col" style="--clr: rgb(211, 32, 42);">
+                        <a class="nav-link icon-link" href="{{ url_for('auth.register') }}">
+                            <lord-icon
+                                src="https://cdn.lordicon.com/egpbfgcp.json"
+                                trigger="hover"
+                                colors="primary:#16c72e,secondary:#3080e8"
+                                style="width: 100px; height: 100px;">
+                            </lord-icon>
+                            <span data-text="Register">Register</span>
+                        </a>
+                    </li>
+                    <li class="col" style="--clr: rgb(0, 115, 62);">
+                        <a class="nav-link icon-link" href="{{ url_for('auth.login') }}">
+                            <lord-icon
+                                src="https://cdn.lordicon.com/qbxwelhw.json"
+                                trigger="hover"
+                                colors="primary:#3080e8,secondary:#16c72e"
+                                style="width: 100px; height: 100px;">
+                            </lord-icon>
+                            <span data-text="Login">Login</span>
+                        </a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+    {% block content %}
+
+    {% endblock content %}
+
+<script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+</body>
+</html>

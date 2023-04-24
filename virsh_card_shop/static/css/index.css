@@ -13,7 +13,6 @@
     letter-spacing: .2em;
     position: relative;
     cursor: pointer;
-    user-select: none;
 }
 
 .landing::before,
@@ -140,10 +139,11 @@
 
 .hover-letter {
     display: inline-block;
-    transition: transform 0.2s ease, color 0.2s ease;
+    transition: transform .2s ease, color .2s ease;
+    user-select: none;
 }
 
 .hover-letter:hover {
     color: orange;
-    transform: translateY(-0.2em);
+    transform: translateY(-.2em);
 }

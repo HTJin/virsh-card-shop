@@ -1,1 +1,1 @@
-gunicorn "virsh-card-shop:app"
+gunicorn "virsh_card_shop:app"

@@ -1,0 +1,57 @@
+<form method="POST">
+    {{ form.hidden_tag() }}
+    <div class="register-container">
+        <div class="input-group mb-3 row">
+            <div class="col" style="display: flex;">
+                <span class="input-group-text">
+                    <lord-icon
+                        src="https://cdn.lordicon.com/dxjqoygy.json"
+                        trigger="hover"
+                        state="hover-looking-around"
+                        color="primary:#16c72e,secondary:#eeaa66"
+                        style="width: 35px; height: 35px;">
+                    </lord-icon>
+                </span>
+                <div class="form-floating">
+                    {{ form.username(class='form-control', placeholder='{{ form.username.label }}', id='registerUsername') }}
+                    {{ form.username.label(for='registerUsername') }}
+                </div>
+            </div>
+            <div class="col" style="display: flex; justify-content: center;">
+                <span class="input-group-text">
+                    <lord-icon
+                        src="https://cdn.lordicon.com/rhvddzym.json"
+                        trigger="hover"
+                        color="primary:#3080e8"
+                        style="width: 35px; height: 35px;">
+                    </lord-icon>
+                </span>
+                <div class="form-floating">
+                    {{ form.email(class='form-control', placeholder='{{ form.email.label }}', id='registerEmail') }}
+                    {{ form.email.label(for='registerEmail') }}
+                </div>
+            </div>
+        </div>
+        <div class="input-group mb-5 row">
+            <div class="col" style="display: flex; justify-content: center;">
+                <div class="form-floating" style="width: 100%;">
+                    {{ form.password(class='form-control', placeholder='{{ form.password.label }}', id='registerPassword') }}
+                    {{ form.password.label(for='registerPassword') }}
+                </div>
+                <span class="input-group-text">
+                    <lord-icon
+                        src="https://cdn.lordicon.com/rqqkvjqf.json"
+                        trigger="hover"
+                        color="primary:#a866ee,secondary:#4030e8"
+                        style="width: 35px; height: 35px;">
+                    </lord-icon>
+                </span>
+                <div class="form-floating" style="width: 100%;">
+                    {{ form.confirm(class='form-control', placeholder='{{ form.confirm.label }}', id='registerConfirm') }}
+                    {{ form.confirm.label(for="registerConfirm") }}
+                </div>
+            </div>
+        </div>
+        {{ form.submit(class='btn btn-lg submit-button', value='Sign me up!') }}
+    </div>
+</form>
