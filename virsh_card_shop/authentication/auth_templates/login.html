@@ -1,17 +1,19 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="modal-dialog modal-xl">
-        <div class="card">
+    <div class="container register-container">
+        <div class="card login-card">
             <div class="row">
-                <div class="col-4">
-                    <div class="logo logo-hover" style="right: 5vw;"><img src="../static/images/V.svg" alt="Logo" style="width: 50px; height: 50px; margin-bottom: 1em;"></div>
+                <div class="col register-container">
+                    <div class="logo logo-hover" style="position: absolute; top: 0; right: 0; align-self: flex-end; margin: 3em;"><img src="../static/images/V.svg" alt="Logo" style="width: 50px; height: 50px; margin-bottom: 1em;"></div>
                     <div class="card-body">
-                        <h1 class="card-title">Welcome Back! 👋</h1>
-                        {% include 'login_form.html' %}
+                        <div class="get-centered">
+                            {{ "Welcome back! 👋"|wrap_words('hover-word', 'hover-letter', 'word-space')|safe }}
+                        </div>
+                            {% include 'login_form.html' %}
                     </div>
                 </div>
-                <div class="col-8">
+                <div class="col">
 
                 </div>
             </div>

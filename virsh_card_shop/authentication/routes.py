@@ -30,7 +30,7 @@ def login():
         if request.method == 'POST' and form.validate_on_submit():
             email = form.email.data
             password = form.password.data
-            user_current = User.query.filter_by(User.email == email).first()
+            user_current = User.query.filter(User.email == email).first()
             if user_current and check_password_hash(user_current.password, password):
                 flash(f'Hello {user_current}, you are logged in!', 'auth-success')
                 login_user(user_current)

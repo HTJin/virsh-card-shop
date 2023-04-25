@@ -11,7 +11,7 @@
     justify-content: center;
     background: linear-gradient(130deg, #FFB864 0%, #006C4C 100%), radial-gradient(100% 224.43% at 0% 0%, #6CFF72 0%, #002C6D 100%), linear-gradient(121.28deg, #FFEAB6 0%, #00563C 100%), radial-gradient(56.26% 101.79% at 50% 0%, #8F00FF 0%, #000000 100%), linear-gradient(65.05deg, #6F0072 0%, #DBFFE5 100%);
     background-blend-mode: overlay, screen, color-burn, screen, normal;
-    background-size: 200% 200%;
+    background-size: 400% 400%;
     animation: gradient 30s ease infinite;
 }
 
@@ -82,6 +82,65 @@
 .submit-button:active {
     box-shadow: 0 0 9e9q inset #0009;
     background-color: var(--c);
+    color: rgb(249, 250, 244);
+    transform: scale(0.95) rotate(6deg);
+}
+
+.login-card {
+    width: 70vw;
+    height: 80vh;
+    justify-content: center;
+    background: linear-gradient(rgb(0, 3, 70) 0%, rgba(255, 160, 0, 1) 100%), linear-gradient(60deg, rgb(0, 5, 34) 0%, rgb(0, 255, 229) 100%), radial-gradient(100% 165% at 100% 100%, rgb(255, 0, 168) 0%, rgb(0, 255, 120) 100%), radial-gradient(100% 150% at 0% 0%, rgb(255, 245, 0) 0%, rgb(81, 213, 0) 100%);
+    background-blend-mode: overlay, soft-light, difference, normal;
+    background-size: 400% 400%;
+    animation: gradient 30s ease infinite;
+}
+
+.login-button {
+    --border: 5px;
+    /* the border width */
+    --slant: 0.7em;
+    /* control the slanted corners */
+    --color: #37E8FC;
+    /* the color */
+
+    font-size: 35px;
+    padding: 0.4em 1.2em;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    color: rgb(249, 250, 244);
+    background:
+        linear-gradient(to bottom left, var(--color) 50%, #0000 50.1%) top right,
+        linear-gradient(to top right, var(--color) 50%, #0000 50.1%) bottom left;
+    background-size: calc(var(--slant) + 1.3*var(--border)) calc(var(--slant) + 1.3*var(--border));
+    background-repeat: no-repeat;
+    box-shadow:
+        0 0 0 200px inset var(--s, #0000),
+        0 0 0 var(--border) inset var(--color);
+    clip-path:
+        polygon(0 0, calc(100% - var(--slant)) 0, 100% var(--slant),
+            100% 100%, var(--slant) 100%, 0 calc(100% - var(--slant)));
+    transition: color var(--t, 0.3s), background-size 0.3s;
+}
+
+.login-button:focus-visible {
+    outline-offset: calc(-1*var(--border));
+    outline: var(--border) solid #000c;
+    clip-path: none;
+    background-size: 0 0;
+}
+
+.login-button:hover,
+.login-button:active {
+    background-size: 100% 100%;
+    color: #000c;
+    --t: 0.2s 0.1s;
+}
+
+.login-button:active {
+    box-shadow: 0 0 9e9q inset #0009;
+    background-color: var(--color);
     color: rgb(249, 250, 244);
     transform: scale(0.95) rotate(6deg);
 }
