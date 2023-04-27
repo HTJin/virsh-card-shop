@@ -43,8 +43,8 @@
 .landing:hover::before,
 .landing:hover::after {
     border-color: orange;
-    animation: 
-        fade-in 1s 7s ease-in forwards, 
+    animation:
+        fade-in 1s 7s ease-in forwards,
         bracket 1s 7s linear forwards,
         rubberBand 1s ease forwards;
 }

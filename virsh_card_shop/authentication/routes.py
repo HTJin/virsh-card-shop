@@ -32,7 +32,7 @@ def login():
             password = form.password.data
             user_current = User.query.filter(User.email == email).first()
             if user_current and check_password_hash(user_current.password, password):
-                flash(f'Hello {user_current}, you are logged in!', 'auth-success')
+                flash(f'Hello {user_current.username}, you are logged in!', 'auth-success')
                 login_user(user_current)
                 if user_current == 'virsh':
                     print(f'Redirecting to Master Profile! 🧔')
@@ -45,6 +45,7 @@ def login():
                 print(f'Redirecting back to Login! 🔑')
                 return redirect(url_for('auth.login'))
     except:
+        flash('Something was wrong in your entries 😕', 'form-failed')
         raise Exception('Something was wrong in your entries 😕')
     return render_template('login.html', form=form)
 
@@ -52,5 +53,6 @@ def login():
 @login_required
 def logout():
     logout_user()
+    flash(f'You have successfully logged out! 👌', 'logged-out')
     print(f'You have successfully logged out! 👌')
     return redirect(url_for('site.home'))

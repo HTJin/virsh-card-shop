@@ -38,4 +38,4 @@ class User(db.Model, UserMixin):
         return secrets.token_hex(length)
     
     def __repr__(self):
-        return f'username: {self.username}, email: {self.email} added to Users.'
+        return f'username: {self.username}, email: {self.email} added to Users'

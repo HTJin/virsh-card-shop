@@ -36,7 +36,7 @@ ul {
 .nav-link > span::before {
     content: attr(data-text);
     position: absolute;
-    color: white;
+    color: rgb(249, 250, 244);
     width: 0;
     overflow: hidden;
     transition: .4s;
@@ -54,10 +54,10 @@ ul {
     1px 1px 1px var(--clr);
 }
 .nav-link:hover > span.black::before {
-    filter: drop-shadow(0 0 15px white);
+    filter: drop-shadow(0 0 15px rgb(249, 250, 244));
     text-shadow:
-    -1px -1px 5px #fff,  
-    1px -1px 5px #fff,
-    -1px 1px 5px #fff,
-    1px 1px 5px #fff;
+    -1px -1px 5px rgb(249, 250, 244),  
+    1px -1px 5px rgb(249, 250, 244),
+    -1px 1px 5px rgb(249, 250, 244),
+    1px 1px 5px rgb(249, 250, 244);
 }
