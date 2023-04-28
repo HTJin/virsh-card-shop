@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash
-from virsh_card_shop.forms import LoginForm, RegisterForm
-from virsh_card_shop.models import User, db
+from ..forms import LoginForm, RegisterForm
+from ..models import User, db
 from werkzeug.security import check_password_hash
 from flask_login import login_user, logout_user, login_required
 
