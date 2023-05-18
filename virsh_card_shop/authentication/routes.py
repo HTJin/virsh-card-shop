@@ -15,8 +15,10 @@ def register():
             email = form.email.data
             password = form.password.data
             user = User(username, email, password=password)
+            
             db.session.add(user)
             db.session.commit()
+            
             flash(f'{user.__repr__()}', 'user_created')
             return redirect(url_for('auth.login'))
     except:
@@ -32,7 +34,7 @@ def login():
             password = form.password.data
             user_current = User.query.filter(User.email == email).first()
             if user_current and check_password_hash(user_current.password, password):
-                flash(f'Hello {user_current.username}, you are logged in!', 'auth-success')
+                flash(f'Hello {user_current.username}, you are logged in! 🔑', 'auth-success')
                 login_user(user_current)
                 if user_current == 'virsh':
                     print(f'Redirecting to Master Profile! 🧔')

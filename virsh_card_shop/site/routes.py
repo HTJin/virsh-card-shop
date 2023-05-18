@@ -10,7 +10,7 @@ def home():
 @site.route('/profile')
 @login_required
 def profile():
-    if current_user.username == 'virsh':
+    if current_user.username == 'virsh' and current_user.email == 'zvirshup@gmail.com':
         return render_template('master_profile.html')
     else:
         return render_template('profile.html')

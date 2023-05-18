@@ -1,8 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="container" style="color: azure;">
-        Master Profile
-        Signed in as: {{ current_user.email }}
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-[azure]">
+        {{ current_user.token }}
     </div>
 {% endblock content %}
