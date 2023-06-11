@@ -9,6 +9,7 @@ from flask_migrate import Migrate
 from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 app.register_blueprint(site)
 app.register_blueprint(auth)
@@ -26,5 +27,3 @@ login_manager.init_app(app)
 login_manager.login_view = 'auth.login'
 
 app.json_encoder = JSONEncoder
-
-CORS(app)

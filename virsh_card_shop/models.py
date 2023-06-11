@@ -40,36 +40,46 @@ class User(db.Model, UserMixin):
     def __repr__(self):
         return f'username: {self.username}, email: {self.email} added to Users'
 
-class PullSheet(db.Model):
-    id = db.Column(db.String, primary_key=True)
-    product_name = db.Column(db.String)
-    condition = db.Column(db.String)
-    card_number = db.Column(db.String)
-    card_set = db.Column(db.String)
-    rarity = db.Column(db.String)
-    quantity = db.Column(db.Integer)
-    file_name = db.Column(db.String)
+class Inventory(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    fireToken = db.Column(db.String)
+    csv_name = db.Column(db.String)
+    TCGplayer_Id = db.Column(db.String(50))
+    Product_Line = db.Column(db.String(150))
+    Set_Name = db.Column(db.String(150))
+    Product_Name = db.Column(db.String(150))
+    Title = db.Column(db.String(150))
+    Number = db.Column(db.String(50))
+    Rarity = db.Column(db.String(50))
+    Condition = db.Column(db.String(50))
+    TCG_Market_Price = db.Column(db.Float)
+    TCG_Direct_Low = db.Column(db.String(50))
+    TCG_Low_Price_With_Shipping = db.Column(db.Float)
+    TCG_Low_Price = db.Column(db.Float)
+    Total_Quantity = db.Column(db.Integer)
+    Add_to_Quantity = db.Column(db.Integer)
+    TCG_Marketplace_Price = db.Column(db.Float)
+    Photo_URL = db.Column(db.String(500))
 
-    def __init__(self, product_name, condition, card_number, card_set, rarity, quantity, file_name):
-        self.id = self.set_id()
-        self.product_name = product_name
-        self.condition = condition
-        self.card_number = card_number
-        self.card_set = card_set
-        self.rarity = rarity
-        self.quantity = quantity
-        self.file_name = file_name
-
-    def set_id(self):
-        return str(uuid.uuid4())
+    def __init__(self, fireToken, csv_name, TCGplayer_Id, Product_Line, Set_Name, Product_Name, Title, Number, Rarity, Condition, TCG_Market_Price, TCG_Direct_Low, TCG_Low_Price_With_Shipping, TCG_Low_Price, Total_Quantity, Add_to_Quantity, TCG_Marketplace_Price, Photo_URL):
+        self.fireToken = fireToken
+        self.csv_name = csv_name
+        self.TCGplayer_Id = TCGplayer_Id
+        self.Product_Line = Product_Line
+        self.Set_Name = Set_Name
+        self.Product_Name = Product_Name
+        self.Title = Title
+        self.Number = Number
+        self.Rarity = Rarity
+        self.Condition = Condition
+        self.TCG_Market_Price = TCG_Market_Price
+        self.TCG_Direct_Low = TCG_Direct_Low
+        self.TCG_Low_Price_With_Shipping = TCG_Low_Price_With_Shipping
+        self.TCG_Low_Price = TCG_Low_Price
+        self.Total_Quantity = Total_Quantity
+        self.Add_to_Quantity = Add_to_Quantity
+        self.TCG_Marketplace_Price = TCG_Marketplace_Price
+        self.Photo_URL = Photo_URL
 
     def __repr__(self):
-        return f'{self.product_name} was read and added from {self.file_name}'
-
-class PullSheetSchema(ma.Schema):
-    class Meta:
-        fields = ['id', 'product_name', 'condition', 'card_number',
-                  'card_set', 'rarity', 'quantity', 'file_name']
-
-pullsheet_schema = PullSheetSchema()
-pullsheets_schema = PullSheetSchema(many=True)
+        return f'Item: {self.Product_Name}, Quantity: {self.Total_Quantity}, Price: {self.TCG_Market_Price} from csv: {self.csv_name}'
